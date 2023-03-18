@@ -27,6 +27,7 @@
 
 ;;; Code:
 
+(require 'apprentice)
 (require 'apprentice-project)
 
 (defgroup apprentice-phoenix nil
@@ -152,9 +153,7 @@ The following commands are available:
   (when (apprentice-phoenix-project-p)
     (apprentice-phoenix-mode)))
 
-;;;###autoload
-(dolist (hook '(apprentice-mode-hook))
-  (add-hook hook 'apprentice-phoenix-enable-mode))
+;;;###autoload (add-hook 'apprentice-mode-hook 'apprentice-phoenix-enable-mode)
 
 (provide 'apprentice-phoenix)
 

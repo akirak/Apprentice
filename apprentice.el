@@ -79,7 +79,6 @@
 (require 'apprentice-compile)
 (require 'apprentice-refcard)
 (require 'apprentice-macroexpand)
-(require 'apprentice-phoenix)
 
 (defun apprentice-mode-hook ()
   "Hook which enables `apprentice-mode'."
