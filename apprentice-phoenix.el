@@ -118,7 +118,8 @@
 
 (defvar apprentice-phoenix-mode-map
   (let ((map (make-sparse-keymap)))
-    (define-key map apprentice-key-command-prefix 'apprentice-phoenix-command-map)
+    (when apprentice-key-command-prefix
+      (define-key map apprentice-key-command-prefix 'apprentice-phoenix-command-map))
     map)
   "Keymap for Apprentice Phoenix minor mode.")
 

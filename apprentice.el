@@ -62,7 +62,7 @@
 
 (defcustom apprentice-key-command-prefix (kbd "C-c a")
   "The prefix for Apprentice related key commands."
-  :type 'string
+  :type '(choice key-sequence (const :tag "Not bound" nil))
   :group 'apprentice)
 
 
@@ -188,7 +188,8 @@ just return nil."
 
 (defvar apprentice-mode-map
   (let ((map (make-sparse-keymap)))
-    (define-key map apprentice-key-command-prefix apprentice-prefix-map)
+    (when apprentice-key-command-prefix
+      (define-key map apprentice-key-command-prefix apprentice-prefix-map))
     map))
 
 ;;;###autoload
