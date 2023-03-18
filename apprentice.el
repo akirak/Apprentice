@@ -77,7 +77,6 @@
 (require 'apprentice-execute)
 (require 'apprentice-iex)
 (require 'apprentice-compile)
-(require 'apprentice-refcard)
 (require 'apprentice-macroexpand)
 
 (defun apprentice-mode-hook ()
