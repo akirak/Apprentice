@@ -286,8 +286,6 @@ Key bindings:
     ("About"
      ["Show Apprentice version" apprentice-version t])))
 
-(add-hook 'elixir-mode-hook 'apprentice-mode-hook)
-
 (provide 'apprentice)
 
 ;;; apprentice.el ends here
