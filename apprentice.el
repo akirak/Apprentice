@@ -294,7 +294,6 @@ Key bindings:
     ("About"
      ["Show Apprentice version" apprentice-version t])))
 
-(add-hook 'elixir-mode-hook #'apprentice-mode-hook)
 (defun apprentice--elixir-mode ()
   (or (car (derived-mode-p 'elixir-mode 'elixir-ts-mode))
       apprentice-elixir-mode
