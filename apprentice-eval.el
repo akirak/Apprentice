@@ -27,7 +27,6 @@
 
 ;;; Code:
 
-(require 'elixir-mode)
 (require 'apprentice-interact)
 
 ;; (defgroup apprentice-eval nil

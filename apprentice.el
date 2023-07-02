@@ -7,7 +7,7 @@
 ;; Maintainer: Fermin MF <fmfs@posteo.net>
 ;; URL: https://github.com/Sasanidas/Apprentice
 ;; Version: 0.5.0
-;; Package-Requires: ((elixir-mode "2.2.5") (emacs "27.1"))
+;; Package-Requires: ((emacs "27.1"))
 ;; Keywords: languages, elixir, elixirc, mix, hex, apprentice
 
 ;; This file is not part of GNU Emacs.
@@ -72,7 +72,6 @@
   :group 'apprentice)
 
 (require 'easymenu)
-(require 'elixir-mode)
 (require 'apprentice-utils)
 (require 'apprentice-eval)
 (require 'apprentice-report)
