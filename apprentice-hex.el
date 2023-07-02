@@ -280,7 +280,7 @@
     (apprentice-interact-create-popup apprentice-hex-buffer-name
 				      content
 				      (lambda ()
-					(elixir-mode)
+					(funcall (apprentice--elixir-mode))
 					(apprentice-hex-mode)))))
 
 (defun apprentice-hex-dependency-info ()

@@ -65,6 +65,11 @@
   :type 'key-sequence
   :group 'apprentice)
 
+(defcustom apprentice-default-elixir-mode nil
+  "Default value of `apprentice-elixir-mode'."
+  :type '(choice (symbol :tag "Major mode")
+                 (const nil))
+  :group 'apprentice)
 
 (require 'easymenu)
 (require 'elixir-mode)
@@ -87,6 +92,8 @@
   "Hook which enables `apprentice-mode'."
   (apprentice-mode 1))
 
+(defvar apprentice-elixir-mode nil
+  "Variable tracking the major mode for Elixir.")
 
 (defvar apprentice-version "0.5.0")
 
@@ -208,6 +215,7 @@ Key bindings:
          (apprentice-test-initialize-modeline))
         (t
          (apprentice-test-reset-modeline)))
+  (setq apprentice-elixir-mode major-mode)
   (apprentice-hooks-mode apprentice-mode))
 
 (easy-menu-define apprentice-mode-menu apprentice-mode-map
@@ -287,6 +295,16 @@ Key bindings:
      ["Show Apprentice version" apprentice-version t])))
 
 (add-hook 'elixir-mode-hook #'apprentice-mode-hook)
+(defun apprentice--elixir-mode ()
+  (or (car (derived-mode-p 'elixir-mode 'elixir-ts-mode))
+      apprentice-elixir-mode
+      apprentice-default-elixir-mode
+      (cdr (rassq 'elixir-ts-mode auto-mode-alist))
+      (when (fboundp 'elixir-ts-mode)
+        'elixir-ts-mode)
+      (when (fboundp 'elixir-mode)
+        'elixir-mode)))
+
 
 (provide 'apprentice)
 
